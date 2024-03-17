@@ -16,7 +16,7 @@ function Login() {
         setIsSubmit(true);
     }
     useEffect(()=>{
-        console.log(formErrors)
+        console.log(formErrors);
         if(Object.keys(formErrors).length === 0 && isSubmit){
             console.log(formValues);
         }
@@ -43,7 +43,7 @@ function Login() {
         }
     return (
         <div className='container'>
-            {Object.keys(formErrors).length === 0 && isSubmit? (<div className="ui message success">Signed in Sucessfully</div>):(<div></div>)}
+            {Object.keys(formErrors).length === 0 && isSubmit? (<div class="alert alert-info" role="alert">Signed in Sucessfully</div>):(<div></div>)}
             <form onSubmit={handleSubmit}>
                 <h1 style={{textAlign:'center'}}>Login</h1>
                 <div className='ui divider'></div>
@@ -66,6 +66,7 @@ function Login() {
           
                 </div>
             </form>
+         
         </div>
     )
 }

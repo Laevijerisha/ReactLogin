@@ -29,14 +29,21 @@ function Login() {
             }
             if(!values.email){
                 errors.email="Email is required!";
+            } else if (!regex.test(values.email)){
+                errors.email="This is not a valid email format!"
             }
             if(!values.password){
                 errors.password="Password is required!";
+            }else if (values.password.length < 4 ){
+                errors.password="Password must be more than 4 charcters"
+            }else if (values.password.length > 10 ){
+                errors.password="Password must be exceed more than 10 charcters"
             }
             return errors;
         }
     return (
         <div className='container'>
+            {Object.keys(formErrors).length === 0 && isSubmit? (<div className="ui message success">Signed in Sucessfully</div>):(<div></div>)}
             <form onSubmit={handleSubmit}>
                 <h1 style={{textAlign:'center'}}>Login</h1>
                 <div className='ui divider'></div>
@@ -44,16 +51,16 @@ function Login() {
                 
                 <div>
                     
-                    <input className='text-input' type='text' placeholder='UserName' class='form-control' value={formValues.username} onChange={handleChange} />
+                    <input className='text-input' type='text' name='username' placeholder='UserName' class='form-control' value={formValues.username} onChange={handleChange} />
                 </div><p>{formErrors.username}</p><br></br>
-                <div >
+                <div>
                     
-                    <input className='text-input' type='text' placeholder='Email' class='form-control'  value={formValues.email} onChange={handleChange} />
+                    <input className='text-input' type='text' name='email' placeholder='Email' class='form-control' value={formValues.email} onChange={handleChange} />
                 </div><p>{formErrors.email}</p><br></br>
                 <div >
                     
-                    <input className='text-input' type='text' placeholder='Password'class='form-control' value={formValues.password} onChange={handleChange} />
-                </div><p>{formErrors.email}</p><br></br>
+                    <input className='text-input' type='text' name='password' placeholder='Password'class='form-control' value={formValues.password} onChange={handleChange} />
+                </div><p>{formErrors.password}</p><br></br>
                 <div>
                 <button class="btn btn-info" style={{width:120}}>Login</button> 
           

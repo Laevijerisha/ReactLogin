@@ -1,10 +1,10 @@
 body {
-  background: rgb(2, 0, 36);
+  background: #D7E4C0;
   background: radial-gradient(
     circle,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(30, 54, 59, 1) 0%,
-    rgba(93, 93, 116, 1) 100%
+    #C6DCBA(2, 0, 36, 1) 0%,
+    #BBC3A4(30, 54, 59, 1) 0%,
+    #B3A398(93, 93, 116, 1) 100%
   );
 }
 .text-input{
@@ -25,10 +25,11 @@ body {
 }
 .container > form {
   width: 70%;
-  border: 1px solid #dfdfdf;
+  border: 1px solid #BBC3A4;
   padding: 20px;
   border-radius: 5px;
-  background: #fff;
+  background: #BBC3A4;
+
 }
 
 pre {
@@ -36,10 +37,26 @@ pre {
   color: #fff;
   font-size: larger;
 }
-
+.form-control{
+  background-color: #4d514b;
+  color: white;
+}
 button {
-  background: #0563b4 !important;
+  background: #94A684!important;
+  
 }
 p {
   color: red;
+}
+.error {
+  color: red;
+  text-align: left;
+  margin: auto;
+  font-size: 16px;
+  padding: 0px 1rem;
+}
+.footer{
+ display: flex;
+justify-content: center;
+width: 200;
 }
